@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre</title>
+</head>
+<body>
+    <h1>Collections</h1>
+    {% if all_collections %}
+        {% for collection in all_collections %}
+        <div align="center">
+            <img src="{{ collection.collcover }}" height="200" width="200">
+            <h2><a href="/genre/{{ collection.id }}/">{{ collection.collection_name }}</a></h2>
+            <h3>{{ collection.description }}</h3>
+            <br>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No collections found.</p>
+    {% endif %}
+</body>
+</html>
